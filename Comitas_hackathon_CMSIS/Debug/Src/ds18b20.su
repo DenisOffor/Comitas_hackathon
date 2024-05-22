@@ -1,0 +1,16 @@
+C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+../Src/ds18b20.c:9:6:TIM2_IRQHandler	4	static
+../Src/ds18b20.c:15:6:init_Gpio_for_ds	4	static
+../Src/ds18b20.c:29:6:init_tim1_for_us	4	static
+../Src/ds18b20.c:35:6:init_tim2_for_delay	8	static
+../Src/ds18b20.c:45:6:ds_reset_pulse	16	static
+../Src/ds18b20.c:71:6:ds_write_bit	16	static
+../Src/ds18b20.c:88:6:ds_write_byte	24	static
+../Src/ds18b20.c:94:9:ds_read_bit	16	static
+../Src/ds18b20.c:114:9:ds_read_byte	16	static
+../Src/ds18b20.c:122:6:TIM_1sec_on	4	static
+../Src/ds18b20.c:127:6:temperature_measurment_start	8	static
+../Src/ds18b20.c:137:6:temprepature_measurment_read	16	static
+../Src/ds18b20.c:154:6:init_DS18B20	8	static
+../Src/ds18b20.c:160:6:DS18B20_measure_temperature	8	static
