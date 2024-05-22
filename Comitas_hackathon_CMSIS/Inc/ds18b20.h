@@ -30,6 +30,8 @@ typedef enum DS18B20_CMD{
 	ERROR_WITH_SENSOR //error state
 } DS18B20_CMD;
 
+extern float temperature;
+
 //interrupts
 void TIM2_IRQHandler();
 

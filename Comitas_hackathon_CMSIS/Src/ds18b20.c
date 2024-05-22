@@ -4,11 +4,12 @@
 DS18B20_CMD ds18b20_cmd = TEMPERATURE_CONVERTING;
 uint8_t ds_buff[9];
 uint16_t temp;
-float temperature;
+float temperature = 0;
 
 void TIM2_IRQHandler() {
 	TIM2->SR &= ~TIM_SR_UIF;
 	TIM2->CR1 &= ~TIM_CR1_CEN;
+	flag = 1;
 	ds18b20_cmd = TEMPERATURE_READING;
 }
 
@@ -22,7 +23,6 @@ void init_Gpio_for_ds() {
 	//PIN for LED, which will signalize about error
 	RCC->APB2ENR |= RCC_PORT_LED;
 	PORT_LED->CRH |= GPIO_MODE_LED;
-	PORT_LED->CRH &= GPIO_PUSH_PULL_LED;
 	//PORT_LED->ODR |= (1 << PIN_LED);
 }
 
@@ -72,16 +72,17 @@ void ds_write_bit(uint8_t bit)
 {
 	TIM1->CNT = 0;
 	TIM1->CR1 |= TIM_CR1_CEN;
+	while(TIM1->CNT < 5) {};
 	//make the line go to low and wait in this state at least 1 us
     PORT_DS18B20->ODR &= ~(1 << PIN_DS18B20);
-    while(TIM1->CNT < 2) {};
+    while(TIM1->CNT < 10) {};
     //set bit on line
     if(bit)
-	  PORT_DS18B20->ODR |=  (1 << PIN_DS18B20);
+    	PORT_DS18B20->ODR |= (1 << PIN_DS18B20);
     //"write operation" with bit last 60-120us
-    while(TIM1->CNT < 60) {};
+    while(TIM1->CNT < 70) {};
     //release line again
-    PORT_DS18B20->ODR |=  (1 << PIN_DS18B20);
+    PORT_DS18B20->ODR |= (1 << PIN_DS18B20);
     TIM1->CR1 &= ~TIM_CR1_CEN;
 }
 
@@ -96,16 +97,17 @@ uint8_t ds_read_bit()
 	uint8_t result;
 	TIM1->CNT=0;
 	TIM1->CR1 |= TIM_CR1_CEN;
+	while(TIM1->CNT < 5) {};
 	//make the line go to low and wait in this state at least 1 us
 	PORT_DS18B20->ODR &= ~(1 << PIN_DS18B20);
-	while(TIM1->CNT < 2) {};
+	while(TIM1->CNT < 10) {};
 	//release line in order to DS18B20 set bit on line
 	PORT_DS18B20->ODR |=  (1 << PIN_DS18B20);
 	//wait at least 15us before read bit
-	while(TIM1->CNT < 15) {};
+	while(TIM1->CNT < 30) {};
 	//read bit
 	result = (PORT_DS18B20->IDR & (1 << PIN_DS18B20)) >> PIN_DS18B20;
-	while(TIM1->CNT < 60 ) {};
+	while(TIM1->CNT < 70 ) {};
 	//"read operation" with bit at least 60
 	TIM1->CR1 &= ~TIM_CR1_CEN;
 	return result;
@@ -130,7 +132,6 @@ void temperature_measurment_start() {
 		return;
 	ds_write_byte(SKIP_ROM_ADR);
 	ds_write_byte(CONVERT_TEMP);
-
 	TIM_1sec_on();
 }
 
@@ -141,8 +142,8 @@ void temprepature_measurment_read() {
 	ds_write_byte(SKIP_ROM_ADR);
 	ds_write_byte(READ_DATA);
 
-	for(int i = 0; i < 9; i++ )
-		ds_buff[i] = ds_read_byte();
+	//for(int i = 0; i < 9; i++ )
+	//	ds_buff[i] = ds_read_byte();
 
 	//convert temperature
 	temp = ds_buff[1];
@@ -160,10 +161,11 @@ void init_DS18B20() {
 void DS18B20_measure_temperature() {
 	switch(ds18b20_cmd) {
 		case TEMPERATURE_CONVERTING:
-			ds18b20_cmd = WAITING_1SEC;
 			temperature_measurment_start();
+			ds18b20_cmd = WAITING_1SEC;
 			break;
 		case TEMPERATURE_READING:
+			PORT_LED->ODR ^= (1 << PIN_LED);
 			temprepature_measurment_read();
 			ds18b20_cmd = TEMPERATURE_CONVERTING;
 			break;

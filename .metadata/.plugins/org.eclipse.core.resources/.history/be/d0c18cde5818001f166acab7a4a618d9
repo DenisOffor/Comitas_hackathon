@@ -1,0 +1,15 @@
+#include "ds18b20.h"
+#include "UART_for_PC.h"
+
+int main(void)
+{
+	init_DS18B20();
+	flag = 0;
+  while (1)
+  {
+	  DS18B20_measure_temperature();
+	  UART_send_data();
+
+  }
+
+}

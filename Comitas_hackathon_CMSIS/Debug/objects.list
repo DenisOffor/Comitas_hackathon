@@ -1,4 +1,7 @@
 "./CMSIS/Src/system_stm32f1xx.o"
+"./Src/TH02.o"
+"./Src/UART_for_PC.o"
+"./Src/common.o"
 "./Src/ds18b20.o"
 "./Src/main.o"
 "./Src/syscalls.o"

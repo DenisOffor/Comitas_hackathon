@@ -1,0 +1,12 @@
+
+#ifndef AHT20_H_
+#define AHT20_H_
+
+#include "common.h"
+
+#define AHT_ADDRESS 0x40
+
+void I2C_for_AHT_init();
+void I2C_AHT_SendByte(uint8_t addr, uint8_t byte);
+
+#endif /* AHT20_H_ */

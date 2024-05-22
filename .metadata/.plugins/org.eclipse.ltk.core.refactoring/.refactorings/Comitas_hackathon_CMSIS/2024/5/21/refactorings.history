@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Comitas_hackathon_CMSIS/Src/AHT20.c&apos; to &apos;TH02.c&apos;" description="Rename resource &apos;AHT20.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/AHT20.c" name="TH02.c" stamp="1716406895890" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Comitas_hackathon_CMSIS/Inc/AHT20.h&apos; to &apos;TH02.h&apos;" description="Rename resource &apos;AHT20.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Inc/AHT20.h" name="TH02.h" stamp="1716406901000" updateReferences="true"/>
+</session>

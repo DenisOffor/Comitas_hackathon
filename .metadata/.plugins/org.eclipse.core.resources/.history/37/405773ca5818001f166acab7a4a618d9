@@ -1,0 +1,9 @@
+/*
+ * common.c
+ *
+ *  Created on: May 22, 2024
+ *      Author: denlo
+ */
+
+
+extern flag = 0;
