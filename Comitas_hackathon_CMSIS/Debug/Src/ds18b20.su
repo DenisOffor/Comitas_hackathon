@@ -1,5 +1,5 @@
-C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
-C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
+C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1511:22:__NVIC_EnableIRQ	16	static
+C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/core_cm3.h:1639:22:__NVIC_SetPriority	16	static
 ../Src/ds18b20.c:9:6:TIM2_IRQHandler	4	static
 ../Src/ds18b20.c:17:6:init_Gpio_for_ds	4	static
 ../Src/ds18b20.c:30:6:init_tim1_for_us	4	static

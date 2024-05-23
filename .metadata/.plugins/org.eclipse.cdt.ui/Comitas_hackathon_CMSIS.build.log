@@ -1,20 +1,20 @@
-09:23:05 **** Incremental Build of configuration Debug for project Comitas_hackathon_CMSIS ****
-make -j12 all 
-arm-none-eabi-gcc "../Src/TH02.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I"C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc" -I"C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TH02.d" -MT"Src/TH02.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TH02.o"
-In file included from C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/common.h:11,
-                 from C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/TH02.h:5,
+17:23:39 **** Incremental Build of configuration Debug for project Comitas_hackathon_CMSIS ****
+make -j4 all 
+arm-none-eabi-gcc "../Src/TH02.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F1 -DSTM32F103C6Tx -c -I"C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc" -I"C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/TH02.d" -MT"Src/TH02.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/TH02.o"
+In file included from C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/common.h:11,
+                 from C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/TH02.h:5,
                  from ../Src/TH02.c:3:
-C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/stm32f1xx.h:62:30: warning: "/*" within comment [-Wcomment]
+C:/Users/denlo/Documents/stm32_workspace/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/stm32f1xx.h:62:30: warning: "/*" within comment [-Wcomment]
    62 |   /* #define STM32F103C6     /*!< STM32F100C4, STM32F100R4, STM32F100C6, STM32F100R6, STM32F100C8, STM32F100R8, STM32F100V8, STM32F100CB, STM32F100RB and STM32F100VB */
       |                               
-arm-none-eabi-gcc -o "Comitas_hackathon_CMSIS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\denlo\Documents\stm32_projects\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Comitas_hackathon_CMSIS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -o "Comitas_hackathon_CMSIS.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\denlo\Documents\stm32_workspace\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Comitas_hackathon_CMSIS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: Comitas_hackathon_CMSIS.elf
  
 arm-none-eabi-size  Comitas_hackathon_CMSIS.elf 
 arm-none-eabi-objdump -h -S Comitas_hackathon_CMSIS.elf  > "Comitas_hackathon_CMSIS.list"
-   text	   data	    bss	    dec	    hex	filename
-   7564	    108	   1924	   9596	   257c	Comitas_hackathon_CMSIS.elf
 arm-none-eabi-objcopy  -O ihex Comitas_hackathon_CMSIS.elf  "Comitas_hackathon_CMSIS.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7584	    108	   1924	   9616	   2590	Comitas_hackathon_CMSIS.elf
 Finished building: default.size.stdout
  
 Finished building: Comitas_hackathon_CMSIS.hex
@@ -22,5 +22,5 @@ Finished building: Comitas_hackathon_CMSIS.list
  
  
 
-09:23:06 Build Finished. 0 errors, 1 warnings. (took 640ms)
+17:23:40 Build Finished. 0 errors, 1 warnings. (took 626ms)
 

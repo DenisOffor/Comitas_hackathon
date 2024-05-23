@@ -1,4 +1,4 @@
 ../Src/TH02.c:5:6:init_GPIO_for_I2C	4	static
 ../Src/TH02.c:11:6:I2C_for_TH_init	8	static
-../Src/TH02.c:24:6:I2C_TH_SendByte	16	static
-../Src/TH02.c:36:6:I2C_TH_Send_NBytes	24	static
+../Src/TH02.c:23:6:I2C_TH_SendByte	16	static
+../Src/TH02.c:37:6:I2C_TH_Send_NBytes	24	static
