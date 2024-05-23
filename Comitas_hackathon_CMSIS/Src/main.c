@@ -15,6 +15,10 @@ int main(void)
 	init_USART();
 	flag = 0;
 	TIM_1sec_on();
+	I2C_for_TH_init();
+	I2C_TH_SendByte(0x40, 0x03);
+	//uint8_t data[2] = {0x03, 0x11 };
+	//I2C_TH_Send_NBytes(0x40, &data[0], 2);
   while (1)
   {
 	  DS18B20_measure_temperature();

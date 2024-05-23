@@ -8,9 +8,10 @@ float temperature = 0;
 
 void TIM2_IRQHandler() {
 	TIM2->SR &= ~TIM_SR_UIF;
-	TIM2->CR1 &= ~TIM_CR1_CEN;
+	//TIM2->CR1 &= ~TIM_CR1_CEN;
 	flag = 1;
-	ds18b20_cmd = TEMPERATURE_READING;
+	//PORT_LED->ODR ^= (1 << PIN_LED);
+	//ds18b20_cmd = TEMPERATURE_READING;
 }
 
 void init_Gpio_for_ds() {
