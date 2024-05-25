@@ -63,8 +63,8 @@ all: main-build
 main-build: Comitas_hackathon_CMSIS.elf secondary-outputs
 
 # Tool invocations
-Comitas_hackathon_CMSIS.elf Comitas_hackathon_CMSIS.map: $(OBJS) $(USER_OBJS) C:\Users\denlo\Documents\stm32_workspace\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Comitas_hackathon_CMSIS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\denlo\Documents\stm32_workspace\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Comitas_hackathon_CMSIS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Comitas_hackathon_CMSIS.elf Comitas_hackathon_CMSIS.map: $(OBJS) $(USER_OBJS) C:\Users\denlo\Documents\stm32_projects\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Comitas_hackathon_CMSIS.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\denlo\Documents\stm32_projects\Comitas_hackathon\Comitas_hackathon_CMSIS\STM32F103C6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Comitas_hackathon_CMSIS.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

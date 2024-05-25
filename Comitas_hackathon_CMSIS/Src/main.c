@@ -1,7 +1,6 @@
 #include "ds18b20.h"
-#include "TH02.h"
 #include "UART_for_PC.h"
-#include <stdio.h>
+#include "TH02.h"
 
 int __io_putchar(int ch) {
 	uint8_t ch8 = ch & 0xFF;
@@ -9,22 +8,21 @@ int __io_putchar(int ch) {
 	return ch;
 }
 
-int main(void)
-{
-	init_DS18B20();
+int main() {
+	//StartHSE();
 	init_USART();
-	flag = 0;
-	TIM_1sec_on();
+	init_DS18B20();
 	I2C_for_TH_init();
-	I2C_TH_SendByte(0x40, 0x03);
-	GPIOA->ODR |= GPIO_ODR_ODR11;
-	//uint8_t data[2] = {0x03, 0x11 };
-	//I2C_TH_Send_NBytes(0x40, &data[0], 2);
-  while (1)
-  {
-	  DS18B20_measure_temperature();
-	  if(flag == 1)
-		  printf(" temp: %d C\r\n", (int8_t)(temperature));
-  }
+	for(int i = 0;i < 10000; i++);
 
+	 ds18b20_cmd = TEMPERATURE_CONVERTING;
+	//I2C_TH_SendByte(0x20, 0x03);
+	while(1) {
+		DS18B20_measure_temperature();
+		TH_measure_temperature();
+		//DS18B20_measure_temperature();
+		//if(flag)
+		//	printf(" temp: %f C\r\n", temperature);
+	}
 }
+

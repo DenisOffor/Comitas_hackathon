@@ -14,7 +14,6 @@
 #define PORT_LED GPIOA
 #define RCC_PORT_LED RCC_APB2ENR_IOPAEN
 #define GPIO_MODE_LED GPIO_CRH_MODE11
-#define GPIO_PUSH_PULL_LED (~GPIO_CRH_CNF12)
 #define PIN_LED 11
 
 //commands which needed for chat with DS18B20
@@ -31,6 +30,7 @@ typedef enum DS18B20_CMD{
 } DS18B20_CMD;
 
 extern float temperature;
+extern DS18B20_CMD ds18b20_cmd;
 
 //interrupts
 void TIM2_IRQHandler();

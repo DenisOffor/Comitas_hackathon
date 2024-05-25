@@ -1,0 +1,59 @@
+#ifndef DS18B20_H_
+#define DS18B20_H_
+
+#include "stm32f1xx.h"
+
+//"defines" for quick change of PIN for DQ line of 1-Wire interface
+#define PORT_DS18B20 GPIOA
+#define RCC_PORT_DS18B20 RCC_APB2ENR_IOPAEN
+#define GPIO_MODE_DS18B20 GPIO_CRH_MODE12
+#define GPIO_OPEN_DRAIN_DS18B20 GPIO_CRH_CNF12_0
+#define PIN_DS18B20 12
+
+//"defines" for quick change of PIN for LED, which will signalize about error
+#define PORT_LED GPIOA
+#define RCC_PORT_LED RCC_APB2ENR_IOPAEN
+#define GPIO_MODE_LED GPIO_CRH_MODE11
+#define PIN_LED 11
+
+//commands which needed for chat with DS18B20
+#define SKIP_ROM_ADR 0xCC
+#define CONVERT_TEMP 0x44
+#define READ_DATA 0x33
+
+//states for FSM
+typedef enum DS18B20_CMD{
+	TEMPERATURE_CONVERTING,
+	WAITING_1SEC,
+	TEMPERATURE_READING,
+	ERROR_WITH_SENSOR //error state
+} DS18B20_CMD;
+
+extern float temperature;
+
+//interrupts
+void TIM2_IRQHandler();
+
+//initialization of periphery
+void init_DS18B20();
+void init_Gpio_for_ds();
+void init_tim1_for_us();
+void init_tim2_for_delay();
+
+//function for 1-Wire interface
+void ds_reset_pulse();
+void ds_write_bit(uint8_t bit);
+uint8_t ds_read_bit();
+void ds_write_byte(uint8_t byte);
+uint8_t ds_read_byte();
+
+//debug, later will be common timer on 1 sec wait
+void TIM_1sec_on();
+
+//function in order to make FSM beautiful :)
+void temperature_measurment_start();
+void temprepature_measurment_read();
+//FSM here
+void DS18B20_measure_temperature();
+
+#endif /* DS18B20_H_ */
