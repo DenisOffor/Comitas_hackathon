@@ -9,7 +9,8 @@ Src/main.o: ../Src/main.c \
  C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/cmsis_gcc.h \
  C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/system_stm32f1xx.h \
  C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/UART_for_PC.h \
- C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/TH02.h
+ C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/TH02.h \
+ C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/SPI_for_TFT.h
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/ds18b20.h:
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/common.h:
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/stm32f1xx.h:
@@ -21,3 +22,4 @@ C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSI
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/CMSIS/Inc/system_stm32f1xx.h:
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/UART_for_PC.h:
 C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/TH02.h:
+C:/Users/denlo/Documents/stm32_projects/Comitas_hackathon/Comitas_hackathon_CMSIS/Inc/SPI_for_TFT.h:

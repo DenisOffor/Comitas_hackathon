@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/SPI_for_TFT.c \
 ../Src/TH02.c \
 ../Src/UART_for_PC.c \
 ../Src/common.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../Src/sysmem.c 
 
 OBJS += \
+./Src/SPI_for_TFT.o \
 ./Src/TH02.o \
 ./Src/UART_for_PC.o \
 ./Src/common.o \
@@ -23,6 +25,7 @@ OBJS += \
 ./Src/sysmem.o 
 
 C_DEPS += \
+./Src/SPI_for_TFT.d \
 ./Src/TH02.d \
 ./Src/UART_for_PC.d \
 ./Src/common.d \
@@ -39,7 +42,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/TH02.cyclo ./Src/TH02.d ./Src/TH02.o ./Src/TH02.su ./Src/UART_for_PC.cyclo ./Src/UART_for_PC.d ./Src/UART_for_PC.o ./Src/UART_for_PC.su ./Src/common.cyclo ./Src/common.d ./Src/common.o ./Src/common.su ./Src/ds18b20.cyclo ./Src/ds18b20.d ./Src/ds18b20.o ./Src/ds18b20.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/SPI_for_TFT.cyclo ./Src/SPI_for_TFT.d ./Src/SPI_for_TFT.o ./Src/SPI_for_TFT.su ./Src/TH02.cyclo ./Src/TH02.d ./Src/TH02.o ./Src/TH02.su ./Src/UART_for_PC.cyclo ./Src/UART_for_PC.d ./Src/UART_for_PC.o ./Src/UART_for_PC.su ./Src/common.cyclo ./Src/common.d ./Src/common.o ./Src/common.su ./Src/ds18b20.cyclo ./Src/ds18b20.d ./Src/ds18b20.o ./Src/ds18b20.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 

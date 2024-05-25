@@ -1,6 +1,7 @@
 #include "ds18b20.h"
 #include "UART_for_PC.h"
 #include "TH02.h"
+#include "SPI_for_TFT.h"
 
 int __io_putchar(int ch) {
 	uint8_t ch8 = ch & 0xFF;
@@ -10,16 +11,16 @@ int __io_putchar(int ch) {
 
 int main() {
 	//StartHSE();
-	init_USART();
-	init_DS18B20();
-	I2C_for_TH_init();
-	for(int i = 0;i < 10000; i++);
+	//init_USART();
+	//init_DS18B20();
+	//I2C_for_TH_init();
 
-	 ds18b20_cmd = TEMPERATURE_CONVERTING;
-	//I2C_TH_SendByte(0x20, 0x03);
+	SPI1_Master_init();
+	BME_init();
+
 	while(1) {
-		DS18B20_measure_temperature();
-		TH_measure_temperature();
+		//DS18B20_measure_temperature();
+		//TH_measure_temperature();
 		//DS18B20_measure_temperature();
 		//if(flag)
 		//	printf(" temp: %f C\r\n", temperature);
