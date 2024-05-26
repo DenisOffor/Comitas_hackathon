@@ -3,8 +3,8 @@
 #include "stm32f1xx.h"
 #include "common.h"
 #include <stdio.h>
-#include <SPI_for_BME.h>
-#include <UART.h>
+#include "SPI_for_BME.h"
+#include "UART.h"
 
 int __io_putchar(int ch);
 
