@@ -1,10 +1,10 @@
 #include "ds18b20.h"
 #include "TH02.h"
-#include "SPI_for_TFT.h"
-#include "UART_for_PC.h"
 #include "stm32f1xx.h"
 #include "common.h"
 #include <stdio.h>
+#include <SPI_for_BME.h>
+#include <UART.h>
 
 int __io_putchar(int ch);
 
@@ -28,7 +28,10 @@ int main() {
 		switch(program_state) {
 			case MEASURE_TEMPERATURE:
 				DS18B20_measure_temperature();
-				TH_measure_temperature();
+
+				//it commented because in proteus stm32f103 don't want to set bit ADDR that slave address was written
+				//in real life with AHT20(sensor with I2C interaction, don't found TH02) I2C work perfectly
+				//TH_measure_temperature();
 			break;
 
 			case TRANSMIT_DATA:
@@ -36,7 +39,12 @@ int main() {
 				UART_send_data(output_data.string_comitas, COMITAS_STRING_SIZE);
 				//send other string with temperatures and etc
 				printf("temperature DS18B20: %f C\r\n", output_data.temperature_DS18B20);
-				printf("temperature ATH20: %f C\r\n", output_data.temperature_TH02);
+				printf("temperature TH02: %f C\r\n", output_data.temperature_TH02);
+				printf("humidity TH02: %f\r\n", output_data.humidity_TH02);
+				printf("temperature BME: %f C\r\n", output_data.temperature_BME280);
+				printf("humidity BME: %f\r\n", output_data.humidity_BME280);
+				printf("pressure BME: %f\r\n", output_data.pressure_BME280);
+				printf("\r\n\r\n");
 				program_state = MEASURE_TEMPERATURE;
 			break;
 		}

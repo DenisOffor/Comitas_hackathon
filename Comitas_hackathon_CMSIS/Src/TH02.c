@@ -74,7 +74,6 @@ void I2C_Get_Data(uint8_t addr, uint8_t *data, uint8_t size) {
 	while((I2C1->SR1 & I2C_SR1_SB) != I2C_SR1_SB);
 	(void) I2C1->SR1;
 	I2C1->DR = (addr << 1) | 0x01;
-	int i = 0;
 	while((I2C1->SR1 & I2C_SR1_ADDR) != I2C_SR1_ADDR);
 	(void) I2C1->SR1;  // clear ADDR
 	(void) I2C1->SR2;  // clear ADDR

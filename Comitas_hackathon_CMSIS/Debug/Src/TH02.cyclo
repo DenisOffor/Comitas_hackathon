@@ -3,4 +3,4 @@
 ../Src/TH02.c:33:6:I2C_TH_SendByte	4
 ../Src/TH02.c:49:6:I2C_TH_Send_NBytes	5
 ../Src/TH02.c:69:6:I2C_Get_Data	8
-../Src/TH02.c:99:6:TH_measure_temperature	3
+../Src/TH02.c:98:6:TH_measure_temperature	3

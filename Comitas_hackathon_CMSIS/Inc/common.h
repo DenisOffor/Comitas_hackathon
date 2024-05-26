@@ -17,6 +17,9 @@ typedef struct Output_data {
 	float temperature_DS18B20;
 	float	temperature_TH02;
 	float	humidity_TH02;
+	float 	temperature_BME280;
+	float	humidity_BME280;
+	float	pressure_BME280;
 	uint8_t string_comitas[COMITAS_STRING_SIZE];
 } Output_data;
 

@@ -5,9 +5,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Src/SPI_for_TFT.c \
+../Src/SPI_for_BME.c \
 ../Src/TH02.c \
-../Src/UART_for_PC.c \
+../Src/UART.c \
 ../Src/common.c \
 ../Src/ds18b20.c \
 ../Src/main.c \
@@ -15,9 +15,9 @@ C_SRCS += \
 ../Src/sysmem.c 
 
 OBJS += \
-./Src/SPI_for_TFT.o \
+./Src/SPI_for_BME.o \
 ./Src/TH02.o \
-./Src/UART_for_PC.o \
+./Src/UART.o \
 ./Src/common.o \
 ./Src/ds18b20.o \
 ./Src/main.o \
@@ -25,9 +25,9 @@ OBJS += \
 ./Src/sysmem.o 
 
 C_DEPS += \
-./Src/SPI_for_TFT.d \
+./Src/SPI_for_BME.d \
 ./Src/TH02.d \
-./Src/UART_for_PC.d \
+./Src/UART.d \
 ./Src/common.d \
 ./Src/ds18b20.d \
 ./Src/main.d \
@@ -42,7 +42,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/SPI_for_TFT.cyclo ./Src/SPI_for_TFT.d ./Src/SPI_for_TFT.o ./Src/SPI_for_TFT.su ./Src/TH02.cyclo ./Src/TH02.d ./Src/TH02.o ./Src/TH02.su ./Src/UART_for_PC.cyclo ./Src/UART_for_PC.d ./Src/UART_for_PC.o ./Src/UART_for_PC.su ./Src/common.cyclo ./Src/common.d ./Src/common.o ./Src/common.su ./Src/ds18b20.cyclo ./Src/ds18b20.d ./Src/ds18b20.o ./Src/ds18b20.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/SPI_for_BME.cyclo ./Src/SPI_for_BME.d ./Src/SPI_for_BME.o ./Src/SPI_for_BME.su ./Src/TH02.cyclo ./Src/TH02.d ./Src/TH02.o ./Src/TH02.su ./Src/UART.cyclo ./Src/UART.d ./Src/UART.o ./Src/UART.su ./Src/common.cyclo ./Src/common.d ./Src/common.o ./Src/common.su ./Src/ds18b20.cyclo ./Src/ds18b20.d ./Src/ds18b20.o ./Src/ds18b20.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 

@@ -8,7 +8,9 @@ void reset_output_data(){
 	output_data.temperature_DS18B20 = 0;
 	output_data.temperature_TH02 = 0;
 	output_data.humidity_TH02 = 0;
-	
+	output_data.temperature_BME280 = 0;
+	output_data.humidity_BME280 = 0;
+	output_data.pressure_BME280 = 0;
 	program_state = MEASURE_TEMPERATURE;
 }
 

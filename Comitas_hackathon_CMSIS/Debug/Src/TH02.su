@@ -3,4 +3,4 @@
 ../Src/TH02.c:33:6:I2C_TH_SendByte	16	static
 ../Src/TH02.c:49:6:I2C_TH_Send_NBytes	24	static
 ../Src/TH02.c:69:6:I2C_Get_Data	24	static
-../Src/TH02.c:99:6:TH_measure_temperature	24	static
+../Src/TH02.c:98:6:TH_measure_temperature	24	static

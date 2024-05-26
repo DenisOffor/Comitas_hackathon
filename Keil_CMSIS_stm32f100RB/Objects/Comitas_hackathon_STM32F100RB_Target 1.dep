@@ -1,0 +1,79 @@
+Dependencies for Project 'Comitas_hackathon_STM32F100RB', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6210000::V6.21::ARMCLANG
+F (.\main.c)(0x66538B95)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/main.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.hMH02.h)(0x00000000)
+I (D:\Keil\ARM\ARMCLANG\include\stdio.hhPI_for_BME.h2ART.h)(0x00000000)
+F (.\common.c)(0x66535CDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/common.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x6569F662)
+F (.\ds18b20.c)(0x66536811)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/ds18b20.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x6569F662)
+F (.\TH02.c)(0x66538B51)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/th02.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x6569F662)
+F (.\SPI_for_BME.c)(0x6653687C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/spi_for_bme.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x6569F662)
+F (.\UART.c)(0x665368C0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/uart.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)
+I (D:\Keil\ARM\ARMCLANG\include\string.h)(0x6569F662)
+F (.\common.h)(0x665367D7)()
+F (.\ds18b20.h)(0x665358EA)()
+F (.\TH02.h)(0x66536E92)()
+F (.\SPI_for_BME.h)(0x66535D79)()
+F (.\UART.h)(0x66535D5F)()
+F (RTE/Device/STM32F100RB/RTE_Device.h)(0x664E046C)()
+F (RTE/Device/STM32F100RB/startup_stm32f10x_md_vl.s)(0x664E046B)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-Wa,armasm,--pd,"__UVISION_VERSION SETA 539" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F10X_MD_VL SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f10x_md_vl.o)
+F (RTE/Device/STM32F100RB/system_stm32f10x.c)(0x664E046B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-4 -O0 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier-I./RTE/Device/STM32F100RB-I./RTE/_Target_1-IC:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include-D__UVISION_VERSION="539" -D_RTE_ -DSTM32F10X_MD_VL -D_RTE_-o ./objects/system_stm32f10x.o -MD)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x664E046B)
+I (RTE\_Target_1\RTE_Components.h)(0x6652ED35)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm3.h)(0x626F912E)
+I (D:\Keil\ARM\ARMCLANG\include\stdint.h)(0x6569F662)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F912E)
+I (C:\Users\denlo\Documents\Keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x664E046B)

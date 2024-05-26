@@ -1,0 +1,487 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.39.0.0
+Copyright (C) 2023 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Lobanov Lobanov, Arm, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.39.0.0
+Toolchain Path:  D:\Keil\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.21
+Assembler:       Armasm.exe V6.21
+Linker/Locator:  ArmLink.exe V6.21
+Library Manager: ArmAr.exe V6.21
+Hex Converter:   FromElf.exe V6.21
+CPU DLL:         SARMCM3.DLL V5.39.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\denlo\Documents\Keil_CMSIS_stm32f100RB\Comitas_hackathon_STM32F100RB.uvprojx
+Project File Date:  05/26/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.21', folder: 'D:\Keil\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup_stm32f10x_md_vl.s...
+common.c(1): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+common.c(1): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+common.c(6): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    6 | void reset_output_data(){
+      |                       ^
+      |                        void
+common.c(7): warning: passing 'uint8_t[18]' (aka 'unsigned char[18]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]
+    7 |         strcpy(output_data.string_comitas, "Comitas Akademya\r\n");
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+D:\Keil\ARM\ARMCLANG\Bin\..\include\string.h(77): note: passing argument to parameter here
+   77 | extern _ARMABI char *strcpy(char * __restrict /*s1*/, const char * __restrict /*s2*/) __attribute__((__nonnull__(1,2)));
+      |                                                     ^
+common.c(1): warning: In file included from...
+./common.h(16): warning: padding size of 'struct Output_data' with 2 bytes to alignment boundary [-Wpadded]
+   16 | typedef struct Output_data {
+      |                ^
+8 warnings generated.
+compiling common.c...
+UART.c(8): warning: In file included from...
+./UART.h(11): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+UART.c(8): warning: In file included from...
+./UART.h(11): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+UART.c(12): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   12 |         DMA1_Channel4->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+UART.c(15): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   15 | void init_GPIO_for_USART() {
+      |                         ^
+      |                          void
+UART.c(20): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   20 | void init_USART() {
+      |                ^
+      |                 void
+UART.c(32): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   32 | void init_DMA_for_USART() {
+      |                        ^
+      |                         void
+UART.c(8): warning: In file included from...
+./UART.h(11): warning: In file included from...
+./common.h(16): warning: padding size of 'struct Output_data' with 2 bytes to alignment boundary [-Wpadded]
+   16 | typedef struct Output_data {
+      |                ^
+10 warnings generated.
+compiling UART.c...
+main.c(1): warning: In file included from...
+./ds18b20.h(4): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+main.c(1): warning: In file included from...
+./ds18b20.h(4): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+main.c(10): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   10 | int main() {
+      |         ^
+      |          void
+6 warnings generated.
+compiling main.c...
+RTE/Device/STM32F100RB/system_stm32f10x.c(64): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+RTE/Device/STM32F100RB/system_stm32f10x.c(166): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |             ^
+RTE/Device/STM32F100RB/system_stm32f10x.c(166): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+  166 | __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+      |     ^
+RTE/Device/STM32F100RB/system_stm32f10x.c(408): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  408 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
+      |         ^~~~~~~~~~~~~
+5 warnings generated.
+compiling system_stm32f10x.c...
+SPI_for_BME.c(7): warning: In file included from...
+./SPI_for_BME.h(4): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+SPI_for_BME.c(7): warning: In file included from...
+./SPI_for_BME.h(4): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+SPI_for_BME.c(15): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   15 | void DMA1_Channel2_IRQHandler() {
+      |                              ^
+      |                               void
+SPI_for_BME.c(18): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   18 |         DMA1_Channel2->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+SPI_for_BME.c(21): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   21 | void DMA1_Channel3_IRQHandler() {
+      |                              ^
+      |                               void
+SPI_for_BME.c(24): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   24 |         DMA1_Channel3->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+SPI_for_BME.c(27): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   27 | void init_GPIO_for_SPI() {
+      |                       ^
+      |                        void
+SPI_for_BME.c(41): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   41 | void SPI1_Master_init() {
+      |                      ^
+      |                       void
+SPI_for_BME.c(51): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   51 | void SPI_cs_set() {
+      |                ^
+      |                 void
+SPI_for_BME.c(55): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   55 | void SPI_cs_clear() {
+      |                  ^
+      |                   void
+SPI_for_BME.c(56): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   56 |         GPIOA->ODR &= ~GPIO_ODR_ODR8;
+      |                    ~~ ^~~~~~~~~~~~~~
+SPI_for_BME.c(59): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   59 | void DMA_for_SPI_init() {
+      |                      ^
+      |                       void
+SPI_for_BME.c(82): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   82 |         DMA1_Channel3->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+SPI_for_BME.c(91): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   91 |         DMA1_Channel2->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+SPI_for_BME.c(93): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   93 |         DMA1_Channel3->CCR &= ~DMA_CCR1_EN;
+      |                            ~~ ^~~~~~~~~~~~
+SPI_for_BME.c(102): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  102 | void BME_init() {
+      |              ^
+      |               void
+SPI_for_BME.c(12): warning: no previous extern declaration for non-static variable 'buffer_SPI_TX' [-Wmissing-variable-declarations]
+   12 | uint8_t buffer_SPI_TX[BUF_SIZE];
+      |         ^
+SPI_for_BME.c(12): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   12 | uint8_t buffer_SPI_TX[BUF_SIZE];
+      | ^
+SPI_for_BME.c(13): warning: no previous extern declaration for non-static variable 'buffer_SPI_RX' [-Wmissing-variable-declarations]
+   13 | uint8_t buffer_SPI_RX[BUF_SIZE];
+      |         ^
+SPI_for_BME.c(13): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+   13 | uint8_t buffer_SPI_RX[BUF_SIZE];
+      | ^
+21 warnings generated.
+compiling SPI_for_BME.c...
+TH02.c(3): warning: In file included from...
+./TH02.h(5): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+TH02.c(3): warning: In file included from...
+./TH02.h(5): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+TH02.c(4): warning: no previous extern declaration for non-static variable 'start_state' [-Wmissing-variable-declarations]
+    4 | uint8_t start_state = 0;
+      |         ^
+TH02.c(4): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    4 | uint8_t start_state = 0;
+      | ^
+TH02.c(6): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    6 | void init_GPIO_for_I2C() {
+      |                       ^
+      |                        void
+TH02.c(13): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   13 | void I2C_for_TH_init() {
+      |                     ^
+      |                      void
+TH02.c(34): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   34 |         I2C1->DR = (addr << 1) | 0x00;
+      |                  ~ ~~~~~~~~~~~~^~~~~~
+TH02.c(48): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   48 |         I2C1->DR = (addr << 1) | 0x00;
+      |                  ~ ~~~~~~~~~~~~^~~~~~
+TH02.c(68): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+   68 |         I2C1->DR = (addr << 1) | 0x01;
+      |                  ~ ~~~~~~~~~~~~^~~~~~
+TH02.c(62): warning: unused parameter 'size' [-Wunused-parameter]
+   62 | void I2C_Get_Data(uint8_t addr, uint8_t *data, uint8_t size) {
+      |                                                        ^
+TH02.c(90): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   90 | void TH_measure_temperature() {
+      |                            ^
+      |                             void
+TH02.c(104): warning: implicit conversion from 'uint32_t' (aka 'unsigned int') to 'float' may lose precision [-Wimplicit-int-float-conversion]
+  104 |                 float buffer = (((uint32_t)result[3] & 15) << 16) | ((uint32_t)result[4] << 8) | result[5];
+      |                       ~~~~~~   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+TH02.c(105): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+  105 |                 output_data.temperature_TH02 = (float)(buffer * 200.00 / 1048576.00) - 50.00;
+      |                                              ~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+TH02.c(105): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+  105 |                 output_data.temperature_TH02 = (float)(buffer * 200.00 / 1048576.00) - 50.00;
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~
+TH02.c(105): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+  105 |                 output_data.temperature_TH02 = (float)(buffer * 200.00 / 1048576.00) - 50.00;
+      |                                                        ^~~~~~ ~
+TH02.c(104): warning: mixing declarations and code is incompatible with standards before C99 [-Wdeclaration-after-statement]
+  104 |                 float buffer = (((uint32_t)result[3] & 15) << 16) | ((uint32_t)result[4] << 8) | result[5];
+      |                       ^
+TH02.c(3): warning: In file included from...
+./TH02.h(5): warning: In file included from...
+./common.h(16): warning: padding size of 'struct Output_data' with 2 bytes to alignment boundary [-Wpadded]
+   16 | typedef struct Output_data {
+      |                ^
+TH02.c(54): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   54 |                 I2C1->DR = data[i];
+      |                            ^~~~
+TH02.c(77): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   77 |       data[i] = I2C1->DR & 0xFF;
+      |       ^~~~
+TH02.c(84): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+   84 |                         data[i] = I2C1->DR & 0xFF;
+      |                         ^~~~
+TH02.c(104): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  104 |                 float buffer = (((uint32_t)result[3] & 15) << 16) | ((uint32_t)result[4] << 8) | result[5];
+      |                                            ^~~~~~
+TH02.c(104): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  104 |                 float buffer = (((uint32_t)result[3] & 15) << 16) | ((uint32_t)result[4] << 8) | result[5];
+      |                                                                                ^~~~~~
+TH02.c(104): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  104 |                 float buffer = (((uint32_t)result[3] & 15) << 16) | ((uint32_t)result[4] << 8) | result[5];
+      |                                                                                                  ^~~~~~
+25 warnings generated.
+compiling TH02.c...
+ds18b20.c(1): warning: In file included from...
+./ds18b20.h(4): warning: In file included from...
+./common.h(4): warning: missing terminating '"' character [-Winvalid-pp-token]
+    4 | #include "stm32f10x.h""
+      |                       ^
+./common.h(4): warning: extra tokens at end of #include directive [-Wextra-tokens]
+    4 | #include "stm32f10x.h""
+      |                       ^
+      |                       //
+ds18b20.c(1): warning: In file included from...
+./ds18b20.h(4): warning: In file included from...
+./common.h(4): warning: In file included from...
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   18 |   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
+      |                                                ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(19): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   19 |   *                code will be based on direct access to peripheral<92>s registers 
+      |                                                                     ^
+C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include\stm32f10x.h(26): warning: invalid UTF-8 in comment [-Winvalid-utf8]
+   26 |   *           - Macros to access peripheral<92>s registers hardware
+      |                                            ^
+ds18b20.c(9): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+    9 | void TIM2_IRQHandler() {
+      |                     ^
+      |                      void
+ds18b20.c(17): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   17 | void init_Gpio_for_ds() {
+      |                      ^
+      |                       void
+ds18b20.c(32): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   32 | void init_tim3_for_us() {
+      |                      ^
+      |                       void
+ds18b20.c(40): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   40 | void init_tim2_for_delay() {
+      |                         ^
+      |                          void
+ds18b20.c(50): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   50 | void ds_reset_pulse()
+      |                    ^
+      |                     void
+ds18b20.c(59): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   59 |         PORT_DS18B20->ODR &= ~(1 << PIN_DS18B20);
+      |                           ~~ ^~~~~~~~~~~~~~~~~~~
+ds18b20.c(70): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   70 |         PORT_LED->ODR &= ~(1 << PIN_LED);
+      |                       ~~ ^~~~~~~~~~~~~~~
+ds18b20.c(79): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+   79 |   PORT_DS18B20->ODR &= ~(1 << PIN_DS18B20);
+      |                     ~~ ^~~~~~~~~~~~~~~~~~~
+ds18b20.c(96): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+   96 | uint8_t ds_read_bit()
+      |                    ^
+      |                     void
+ds18b20.c(101): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+  101 |         PORT_DS18B20->ODR &= ~(1 << PIN_DS18B20);
+      |                           ~~ ^~~~~~~~~~~~~~~~~~~
+ds18b20.c(114): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  114 | uint8_t ds_read_byte()
+      |                     ^
+      |                      void
+ds18b20.c(122): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  122 | void TIM_delay_on() {
+      |                  ^
+      |                   void
+ds18b20.c(127): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  127 | void temperature_measurment_start() {
+      |                                  ^
+      |                                   void
+ds18b20.c(136): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  136 | void temprepature_measurment_read() {
+      |                                  ^
+      |                                   void
+ds18b20.c(148): warning: implicit conversion loses integer precision: 'int' to 'uint16_t' (aka 'unsigned short') [-Wimplicit-int-conversion]
+  148 |         temp = temp << 8;
+      |              ~ ~~~~~^~~~
+ds18b20.c(150): warning: implicit conversion loses floating-point precision: 'double' to 'float' [-Wimplicit-float-conversion]
+  150 |         output_data.temperature_DS18B20 = (float)temp * 0.0625;
+      |                                         ~ ~~~~~~~~~~~~^~~~~~~~
+ds18b20.c(150): warning: implicit conversion increases floating-point precision: 'float' to 'double' [-Wdouble-promotion]
+  150 |         output_data.temperature_DS18B20 = (float)temp * 0.0625;
+      |                                           ^~~~~~~~~~~ ~
+ds18b20.c(1): warning: In file included from...
+./ds18b20.h(4): warning: In file included from...
+./common.h(16): warning: padding size of 'struct Output_data' with 2 bytes to alignment boundary [-Wpadded]
+   16 | typedef struct Output_data {
+      |                ^
+ds18b20.c(153): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  153 | void init_DS18B20() {
+      |                  ^
+      |                   void
+ds18b20.c(159): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+  159 | void DS18B20_measure_temperature() {
+      |                                 ^
+      |                                  void
+ds18b20.c(175): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+  175 |                 default: 
+      |                 ^
+ds18b20.c(5): warning: no previous extern declaration for non-static variable 'ds_buff' [-Wmissing-variable-declarations]
+    5 | uint8_t ds_buff[9];
+      |         ^
+ds18b20.c(5): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    5 | uint8_t ds_buff[9];
+      | ^
+ds18b20.c(6): warning: no previous extern declaration for non-static variable 'temp' [-Wmissing-variable-declarations]
+    6 | uint16_t temp;
+      |          ^
+ds18b20.c(6): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+    6 | uint16_t temp;
+      | ^
+ds18b20.c(144): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  144 |                 ds_buff[i] = ds_read_byte();
+      |                 ^~~~~~~
+ds18b20.c(147): warning: unsafe buffer access [-Wunsafe-buffer-usage]
+  147 |         temp = ds_buff[1];
+      |                ^~~~~~~
+30 warnings generated.
+compiling ds18b20.c...
+linking...
+Program Size: Code=6620 RO-data=340 RW-data=4 ZI-data=2192  
+".\Objects\Comitas_hackathon_STM32F100RB.axf" - 0 Error(s), 105 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM::CMSIS@5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.1.pack
+                Keil::STM32F1xx_DFP@2.4.1
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F100RB
+  ./RTE/_Target_1
+  C:/Users/denlo/Documents/Keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/denlo/Documents/Keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE@5.6.0
+
+   * Component: Keil::Device:Startup@1.0.0
+      Source file:   Device/Source/system_stm32f10x.c
+      Source file:   Device/Source/ARM/STM32F1xx_OPT.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
+      Source file:   Device/Source/ARM/startup_stm32f10x_md_vl.s
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
