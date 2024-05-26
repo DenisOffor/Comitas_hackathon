@@ -1,5 +1,5 @@
-.metadata
-Comitas_hackathon_CMSIS/.metadata
-Comitas_hackathon_CMSIS/.settings
-Comitas_hackathon_CMSIS/Debug
-Keil_CMSIS_stm32f100RB/DebugConfig
+.metadata/
+Comitas_hackathon_CMSIS/.metadata/
+Comitas_hackathon_CMSIS/.settings/
+Comitas_hackathon_CMSIS/Debug/
+Keil_CMSIS_stm32f100RB/DebugConfig/
