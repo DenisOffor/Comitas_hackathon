@@ -7,9 +7,6 @@
 
 #include "UART_for_PC.h"
 
-uint8_t UART_tx_buf[] = "Comitas\r\n";
-
-
 void DMA1_Channel4_IRQHandler(void) {
 	DMA1->IFCR |= DMA_IFCR_CTCIF4;
 	DMA1_Channel4->CCR &= ~DMA_CCR_EN;
@@ -36,7 +33,7 @@ void init_DMA_for_USART() {
 	RCC->AHBENR |= RCC_AHBENR_DMA1EN;
 	//USART TX channel - 4
 	DMA1_Channel4->CCR |= DMA_CCR_DIR | DMA_CCR_MINC;
-	DMA1_Channel4->CMAR = (uint32_t)(&UART_tx_buf[0]);
+	DMA1_Channel4->CMAR = (uint32_t)(&output_data.string_comitas[0]);
 	DMA1_Channel4->CPAR = (uint32_t)(&(USART1->DR));
 	DMA1_Channel4->CCR |= DMA_CCR_TCIE;
 	DMA1_Channel4->CNDTR = 0;
@@ -45,13 +42,18 @@ void init_DMA_for_USART() {
 	NVIC_SetPriority(DMA1_Channel4_IRQn, 3);
 }
 
-void UART_send_data(uint8_t ch8) {
-	UART_tx_buf[0] = ch8;
-	DMA1_Channel4->CMAR = (uint32_t)(&UART_tx_buf[0]);
-	DMA1_Channel4->CNDTR = 1;
+void UART_send_data(uint8_t* data, uint8_t amount_of_byte) {
+	DMA1_Channel4->CMAR = (uint32_t)(&data[0]);
+	DMA1_Channel4->CNDTR = amount_of_byte;
 	DMA1_Channel4->CCR |= DMA_CCR_EN;
 	while(DMA1_Channel4->CCR & DMA_CCR_EN) {};
 	for(int i = 0; i < 100; i++);
-	flag = 0;
 }
+
+//void UART_send_data(uint8_t amount_of_byte) {
+//	DMA1_Channel4->CCR &= ~DMA_CCR_EN;
+//	DMA1_Channel4->CMAR = (uint32_t)(&transmit_buf[0]);
+//	DMA1_Channel4->CNDTR = amount_of_byte;
+//	DMA1_Channel4->CCR |= DMA_CCR_EN;
+//}
 

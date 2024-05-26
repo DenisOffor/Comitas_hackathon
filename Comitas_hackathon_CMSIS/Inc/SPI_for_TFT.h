@@ -1,10 +1,3 @@
-/*
- * SPI_for_TFT.h
- *
- *  Created on: 1 ���. 2023 �.
- *      Author: denlo
- */
-
 #ifndef SPI_FOR_TFT_H_
 #define SPI_FOR_TFT_H_
 

@@ -69,7 +69,7 @@ void DMA_for_SPI_init() {
 	DMA1_Channel3->CNDTR = 0;
 	DMA1_Channel3->CMAR = (uint32_t)(&buffer_SPI_TX[0]);
 	DMA1_Channel3->CPAR = (uint32_t)(&(SPI1->DR));
-	DMA1_Channel3->CNDTR = 0;
+  DMA1_Channel3->CNDTR = 0;
 
 	SPI1->CR2 |= SPI_CR2_TXDMAEN;
 	NVIC_EnableIRQ(DMA1_Channel2_IRQn);
@@ -90,15 +90,19 @@ void SPI1_SendData_BME(uint8_t amount_of_byte) {
 void SPI1_GetData_BME(uint8_t amount_of_byte) {
 	DMA1_Channel2->CCR &= ~DMA_CCR_EN;
 	DMA1_Channel2->CNDTR = amount_of_byte;
+	DMA1_Channel3->CCR &= ~DMA_CCR_EN;
+	DMA1_Channel3->CNDTR = amount_of_byte;
 
 	SPI_cs_clear();
 	for(int i = 0; i < 10; i++);
 	DMA1_Channel2->CCR |= DMA_CCR_EN;
+	DMA1_Channel3->CCR |= DMA_CCR_EN;
 }
 
 void BME_init() {
 	//Byte consist of the SPI reg address (without 8 bit) and read command(bit 8 - "1")
 	buffer_SPI_TX[0] = BME280_REG_ID | 0x80;
 	SPI1_SendData_BME(1);
-	//SPI1_GetData_BME(1);
+	buffer_SPI_TX[0] = 0x00;
+	SPI1_GetData_BME(1);
 }

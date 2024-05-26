@@ -10,10 +10,14 @@
 
 #include "common.h"
 
-void DMA1_Channel4_5_IRQHandler(void);
-void init_GPIO_for_USART();
-void init_USART();
-void init_DMA_for_USART();
-void UART_send_data(uint8_t ch8);
+#define BUF_SIZE 255
+
+
+void DMA1_Channel4_IRQHandler(void);
+void init_GPIO_for_USART(void);
+void init_USART(void);
+void init_DMA_for_USART(void);
+void UART_send_data(uint8_t* data, uint8_t amount_of_byte);
+//void UART_send_data(uint8_t amount_of_byte);
 
 #endif /* UART_FOR_PC_H_ */

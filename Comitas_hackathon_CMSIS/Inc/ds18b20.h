@@ -21,40 +21,37 @@
 #define CONVERT_TEMP 0x44
 #define READ_DATA 0xBE
 
-//states for FSM
+//states for FSM ds18b20 measurement
 typedef enum DS18B20_CMD{
-	TEMPERATURE_CONVERTING,
-	WAITING_1SEC,
+	TEMPERATURE_CONVERTING = 0,
 	TEMPERATURE_READING,
+	WAITING_1SEC,
 	ERROR_WITH_SENSOR //error state
 } DS18B20_CMD;
 
-extern float temperature;
 extern DS18B20_CMD ds18b20_cmd;
 
 //interrupts
-void TIM2_IRQHandler();
+void TIM2_IRQHandler(void);
 
 //initialization of periphery
-void init_DS18B20();
-void init_Gpio_for_ds();
-void init_tim1_for_us();
-void init_tim2_for_delay();
+void init_DS18B20(void);
+void init_Gpio_for_ds(void);
+void init_tim3_for_us(void);
+void init_tim2_for_delay(void);
 
 //function for 1-Wire interface
-void ds_reset_pulse();
+void ds_reset_pulse(void);
 void ds_write_bit(uint8_t bit);
-uint8_t ds_read_bit();
+uint8_t ds_read_bit(void);
 void ds_write_byte(uint8_t byte);
-uint8_t ds_read_byte();
-
-//debug, later will be common timer on 1 sec wait
-void TIM_1sec_on();
+uint8_t ds_read_byte(void);
+void TIM_delay_on(void);
 
 //function in order to make FSM beautiful :)
-void temperature_measurment_start();
-void temprepature_measurment_read();
+void temperature_measurment_start(void);
+void temprepature_measurment_read(void);
 //FSM here
-void DS18B20_measure_temperature();
+void DS18B20_measure_temperature(void);
 
 #endif /* DS18B20_H_ */

@@ -4,16 +4,16 @@
 DS18B20_CMD ds18b20_cmd = TEMPERATURE_CONVERTING;
 uint8_t ds_buff[9];
 uint16_t temp;
-float temperature = 0;
 
+//timer 2 used for program state switch and
 void TIM2_IRQHandler() {
 	TIM2->SR &= ~TIM_SR_UIF;
 	TIM2->CR1 &= ~TIM_CR1_CEN;
-	GPIOA->ODR ^= (1 << PIN_LED);
-	flag = 1;
+	program_state = TRANSMIT_DATA;
 	ds18b20_cmd = TEMPERATURE_READING;
 }
 
+//there many defines for DS18B20 init for quick GPIO and PIN change if needed
 void init_Gpio_for_ds() {
 	//PIN for Data line (DQ) of One-wire interface
 	RCC->APB2ENR |= RCC_PORT_DS18B20;
@@ -23,22 +23,24 @@ void init_Gpio_for_ds() {
 	PORT_DS18B20->ODR |= (1 << PIN_DS18B20);
 	
 	//PIN for LED, which will signalize about error
-	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+	RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
 	GPIOA->CRH |= GPIO_CRH_MODE11;
 	GPIOA->CRH &= ~GPIO_CRH_CNF11;
 }
 
-void init_tim1_for_us() {
+//timer for generate 1us
+void init_tim3_for_us() {
 	RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
 	TIM3->ARR = 1000;
 	TIM3->PSC = 7;
 	TIM3->CR1 |= TIM_CR1_CEN;
 } 
 
+//timer for delay between measurements (750 ms needed in max resolution)
 void init_tim2_for_delay() {
 	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	TIM2->ARR = 8000;
-	TIM2->PSC = 999;
+	TIM2->PSC = 799;
 	TIM2->DIER |= TIM_DIER_UIE;
 	NVIC_EnableIRQ(TIM2_IRQn);
 	NVIC_SetPriority(TIM2_IRQn, 1);
@@ -47,9 +49,8 @@ void init_tim2_for_delay() {
 
 void ds_reset_pulse()
 {
-	uint8_t result;
 	//line should be in high state
-	if((PORT_DS18B20->IDR & (1 << PIN_DS18B20)) == 0) {
+	if((PORT_DS18B20->IDR & GPIO_IDR_IDR12) == 0) {
 		ds18b20_cmd = ERROR_WITH_SENSOR;
 		return;
 	}
@@ -60,13 +61,15 @@ void ds_reset_pulse()
 	//release the line (let go it to high) and wait to respond of DS18B20 after 15-60 us of wait
 	PORT_DS18B20->ODR |= (1 << PIN_DS18B20);
 	while(TIM3->CNT < 520);
-	//read line in order to check answer from DS18B20
-	result = PORT_DS18B20->IDR & (1 << PIN_DS18B20);
-//	//wait minimum 480us from moment, where we release the line
-	while(TIM3->CNT < 960);
-//	//if line was in high state - there are no answer from DS18B20 :(
-	if(result)
+	//if line was in high state - there are no answer from DS18B20 :(
+	if(PORT_DS18B20->IDR & GPIO_IDR_IDR12) {
 		ds18b20_cmd = ERROR_WITH_SENSOR;
+		return;
+	}
+	//if we here then no error was detected
+	PORT_LED->ODR &= ~(1 << PIN_LED);
+	//wait minimum 480us from moment, where we release the line
+	while(TIM3->CNT < 960);
 }
 
 void ds_write_bit(uint8_t bit)
@@ -116,7 +119,7 @@ uint8_t ds_read_byte()
 	return result;
 }
 
-void TIM_1sec_on() {
+void TIM_delay_on() {
 	TIM2->CNT = 0;
 	TIM2->CR1 |= TIM_CR1_CEN;
 }
@@ -127,7 +130,7 @@ void temperature_measurment_start() {
 		return;
 	ds_write_byte(SKIP_ROM_ADR);
 	ds_write_byte(CONVERT_TEMP);
-	TIM_1sec_on();
+	TIM_delay_on();
 }
 
 void temprepature_measurment_read() {
@@ -144,31 +147,33 @@ void temprepature_measurment_read() {
 	temp = ds_buff[1];
 	temp = temp << 8;
 	temp |= ds_buff[0];
-	temperature = (float)temp * 0.0625;
+	output_data.temperature_DS18B20 = (float)temp * 0.0625;
 }
 
 void init_DS18B20() {
 	init_Gpio_for_ds();
-	init_tim1_for_us();
+	init_tim3_for_us();
 	init_tim2_for_delay();
 }
 
 void DS18B20_measure_temperature() {
 	switch(ds18b20_cmd) {
 		case TEMPERATURE_CONVERTING:
-			temperature_measurment_start();
 			ds18b20_cmd = WAITING_1SEC;
+			temperature_measurment_start();
 			break;
 		case TEMPERATURE_READING:
-			temprepature_measurment_read();
 			ds18b20_cmd = TEMPERATURE_CONVERTING;
+			temprepature_measurment_read();
 			break;
 		case ERROR_WITH_SENSOR:
 			PORT_LED->ODR |= (1 << PIN_LED);
+			ds18b20_cmd = TEMPERATURE_CONVERTING;
 			break;
 		case WAITING_1SEC:
 		break;
-		default: ds18b20_cmd = TEMPERATURE_CONVERTING;
+		default: 
+			ds18b20_cmd = TEMPERATURE_CONVERTING;
 			break;
 	}
 }
